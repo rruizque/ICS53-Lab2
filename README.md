@@ -7,7 +7,7 @@ To download repository:
 //From here on out, make sure you are in the directory with the .git file.
 
 To pull changes from the internet:  
-This overwrites what`s on the local machine with what`s online.  
+This overwrites what's on the local machine with what's online.  
 `git pull`
 
 To add a change to the next commit:  
