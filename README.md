@@ -10,13 +10,15 @@ To pull changes from the internet:
 This overwrites what's on the local machine with what's online.
 git pull
 
-To add a file to the commit:
-This is if you want to start keeping track of a new file.
+To add a change to the next commit:
+The filename is the file in which you made the change
 git add *filename*
+To add all changes to the next commit:
+git add .
 
 To commit changes:
 This commits any changes to your LOCAL machine.
-git commit -a "This a commit message. Make it useful"
+git commit -m "This a commit message. Make it meaningful"
 
 To push changes to the internet:
 git push 
