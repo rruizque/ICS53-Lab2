@@ -20,12 +20,10 @@ int main(int argc, char **argv) {
     pid = fork(); //create a clone of the current process
     if(pid < 0) {
       printf("Error forking\n");
-      exit(1);
     }
     else if (pid == 0) {
     //child process code
-      //execve(command, argv, environ);
-      printf("Child Process executed");
+      execve(command, argv, environ);
       //this line replaces the current process with the one specified in
       //the command variable.
     }
