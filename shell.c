@@ -10,13 +10,15 @@ int main() {
 
   char command[20];
 
+
+
   do {
     printf("prompt> ");
     scanf("%s", command);
 
-    printf("%s\n", "something crazy!!!");
+    
 
-  } while (!strcmp("quit", command) == 0);
+  } while (strcmp("quit", command));
   
   int status;
   int pid;
