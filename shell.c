@@ -10,7 +10,6 @@ int main(int argc, char **argv) {
   char lastChar; //for checking if last character is'&'
   int pid;
   int status;
-  int 
 
   do {
     printf("prompt> ");
