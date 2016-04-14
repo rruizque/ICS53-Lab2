@@ -14,8 +14,8 @@ int main() {
     printf("prompt> ");
     scanf("%s", command);
 
-    
-     
+    printf("%s\n", "something crazy!!!");
+
   } while (!strcmp("quit", command) == 0);
   
   int status;
