@@ -17,6 +17,7 @@ int main(int argc, char **argv) {
     printf("prompt> ");
     scanf("%s", command);
     lastChar = command[strlen(command) - 1];
+    if (lastChar == '&') command[strlen(command) - 1] = '\0';
 
     pid = fork(); //create a clone of the current process
     if(pid < 0) {
