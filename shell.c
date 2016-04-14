@@ -3,9 +3,9 @@
 #include<stdlib.h>
 #include<unistd.h>
 
+extern char **environ; //defined in libc
 
-
-int main() {
+int main(int argc, char **argv) {
 
 
   char command[20];
@@ -24,7 +24,7 @@ int main() {
       exit(1);
     }
     else if (pid == 0) { //child process code
-      execve(command, "", "");
+      execve(command, argv, environ);
     }
     else { //parent process code
       if (lastChar != '&') { // run the child process in the foreground
