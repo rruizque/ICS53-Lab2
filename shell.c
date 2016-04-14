@@ -6,12 +6,11 @@
 extern char **environ; //defined in libc
 
 int main(int argc, char **argv) {
-
-
   char command[20];
   char lastChar; //for checking if last character is'&'
   int pid;
   int status;
+  int 
 
   do {
     printf("prompt> ");
@@ -26,7 +25,8 @@ int main(int argc, char **argv) {
     }
     else if (pid == 0) {
     //child process code
-      execve(command, argv, environ);
+      //execve(command, argv, environ);
+      printf("Child Process executed");
       //this line replaces the current process with the one specified in
       //the command variable.
     }
