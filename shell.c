@@ -20,41 +20,29 @@ int main(int argc, char **argv) {
 
     pid = fork(); //create a clone of the current process
     if(pid < 0) {
-      printf("\n Error forking");
+      printf("Error forking\n");
       exit(1);
     }
-    else if (pid == 0) { //child process code
+    else if (pid == 0) {
+    //child process code
       execve(command, argv, environ);
+      //this line replaces the current process with the one specified in
+      //the command variable.
     }
-    else { //parent process code
-      if (lastChar != '&') { // run the child process in the foreground
+    else { 
+    //parent process code
+      if (lastChar != '&') {
+      // run the child process in the foreground
+        printf("Parent Waiting\n");
         wait(&status);
+        printf("Parent resumed\n");
+      }
+      else {
+        printf("Both processes running concurrently.\n");
       }
     }
 
   } while (strcmp("quit", command));
-  
-  // int status;
-  // int pid;
-  // pid=fork();
-  // if(pid<0)
-  // {
-  //     printf("\n Error ");
-  //     exit(1);
-  // }
-  // else if(pid==0)
-  // {
-  //     printf("\n Hello I am the child process ");
-  //     printf("\n My pid is %d ",getpid());
-  //     exit(0);
-  // }
-  // else
-  // {
-  //     wait(&status);
-  //     printf("\n Hello I am the parent process ");
-  //     printf("\n My actual pid is %d \n ",getpid());
-  //     exit(1);
-  // }
 
   return 0;
 }
