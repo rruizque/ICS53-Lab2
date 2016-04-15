@@ -11,11 +11,13 @@ int main(int argc, char **argv) {
   int pid;
   int status;
 
-  do {
+  while(true) {
     printf("prompt> ");
     scanf("%s", command);
     lastChar = command[strlen(command) - 1];
     if (lastChar == '&') command[strlen(command) - 1] = '\0';
+
+    if (!strcmp("quit", command)) break;
 
     pid = fork(); //create a clone of the current process
     if(pid < 0) {
@@ -26,16 +28,16 @@ int main(int argc, char **argv) {
       execve(command, argv, environ);
       //this line replaces the current process with the one specified in
       //the command variable.
-      printf("Does this code run?\n");
+      printf("CHILD: execve() failed\n");
       exit(0);
     }
     else { 
     //parent process code
       if (lastChar != '&') {
       // run the child process in the foreground
-        printf("Parent suspending execution\n");
+        printf("PARENT: suspending execution\n");
         wait(&status);
-        printf("Parent resumed execution\n");
+        printf("PARENT: resumed execution\n");
       }
       else {
         printf("Both processes running concurrently.\n");
@@ -44,7 +46,7 @@ int main(int argc, char **argv) {
       }
     }
 
-  } while (strcmp("quit", command));
+  }
 
   return 0;
 }
