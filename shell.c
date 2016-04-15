@@ -26,6 +26,8 @@ int main(int argc, char **argv) {
       execve(command, argv, environ);
       //this line replaces the current process with the one specified in
       //the command variable.
+      printf("Does this code run?\n");
+      exit(0);
     }
     else { 
     //parent process code
