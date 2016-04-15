@@ -35,9 +35,9 @@ int main(int argc, char **argv) {
     //parent process code
       if (lastChar != '&') {
       // run the child process in the foreground
-        printf("PARENT: suspending execution\n");
+        //printf("PARENT: suspending execution\n");
         wait(&status);
-        printf("PARENT: resumed execution\n");
+        //printf("PARENT: resumed execution\n");
       }
       else {
         printf("Both processes running concurrently.\n");

@@ -8,7 +8,7 @@ int main(int argc, char** argv) {
     sleep(2);
   }
   else {
-    printf("Hello: Not enough args\n");
+    printf("Hello: Incorrect args\n");
   }
 	return 0;
 }

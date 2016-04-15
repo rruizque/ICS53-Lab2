@@ -42,9 +42,7 @@ int main() {
       }
       else {
         // run the child process in the foreground
-        printf("PARENT: suspending\n");
         wait(&status);
-        printf("PARENT: resumed\n");
       }
     }
 
