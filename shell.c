@@ -28,7 +28,7 @@ int main(int argc, char **argv) {
       execve(command, argv, environ);
       //this line replaces the current process with the one specified in
       //the command variable.
-      printf("CHILD: execve() failed\n");
+      printf("%s: Command not found.\n", command);
       exit(0);
     }
     else { 
