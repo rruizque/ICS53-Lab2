@@ -37,6 +37,8 @@ int main(int argc, char **argv) {
       }
       else {
         printf("Both processes running concurrently.\n");
+        sleep(3);
+        printf("Parent while loop ending\n");
       }
     }
 
