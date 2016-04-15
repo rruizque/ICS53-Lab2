@@ -26,14 +26,14 @@ int main() {
 
     pid = fork(); //create a clone of the current process
     if(pid < 0) {
-      fprintf(stderror, "Error forking\n");
+      fprintf(stderr, "Error forking\n");
     }
     else if (pid == 0) {
     //child process code
       execve(argv[0], argv, environ);
       //this line replaces the current process with the one specified
       //in argv[0].
-      fprintf(stderror, "%s: Command not found.\n", argv[0]);
+      fprintf(stderr, "%s: Command not found.\n", argv[0]);
       exit(0);
     }
     else { 
