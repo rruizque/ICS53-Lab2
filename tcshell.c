@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stderror.h>
 #include<stdlib.h>
 #include<unistd.h>
 
@@ -61,7 +62,7 @@ int main() {
   */
 int parseline(const char *cmdline, char **argv) 
 {
-  static char array[MAXLINE]; /* holds local copy of command line */
+  static char array[MAXCHARS]; /* holds local copy of command line */
   char *buf = array;          /* ptr that traverses command line */
   char *delim;                /* points to first space delimiter */
   int argc;                   /* number of args */
