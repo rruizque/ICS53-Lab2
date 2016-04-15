@@ -11,7 +11,7 @@ int main(int argc, char **argv) {
   int pid;
   int status;
 
-  while(true) {
+  while(1) {
     printf("prompt> ");
     scanf("%s", command);
     lastChar = command[strlen(command) - 1];
