@@ -29,7 +29,7 @@ int main(int argc, char **argv) {
     }
     else { 
     //parent process code
-      if (lastChar != '&') {
+      if (strcmp("quit", command) && lastChar != '&') {
       // run the child process in the foreground
         printf("Parent suspending execution\n");
         wait(&status);

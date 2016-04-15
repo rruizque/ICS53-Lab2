@@ -1,6 +1,9 @@
 #include <stdio.h>
+#include <unistd.h>
 
 int main() {
-	printf("Hi Max and Rodrigo! You guys ROCK!");
+  sleep(2);
+	printf("Hi Max and Rodrigo! You guys ROCK!\n");
+  sleep(2);
 	return 0;
 }
