@@ -1,13 +1,27 @@
 # ICS53-Lab2
 Shell lab
 
-To download repository:  
+Due: Friday, April 29th    
+Developers: Max Paulus 69457762  
+            Rodrigo Ruiz Quevedo IDNUMBER  
+
+shell.c is the program WITHOUT a command-line parser. It only reads
+the first string of input after "prompt> "  
+
+tcshell.c is the program WITH a command-line parser. It can read any
+number of arguments after "prompt> " separated by a space. Otherwise, it's identical to shell.c ... NOTE: THIS PROGRAM TAKES CODE FROM THE ICS53
+TEXTBOOK. DON'T TURN IN THIS CODE.
+
+
+
+-------GIT STUFF------  
+To download a repository:  
 `git clone https://github.com/maxpaulus43/ICS53-Lab2.git`
 
 //From here on out, make sure you are in the directory with the .git file.
 
 To pull changes from the internet:  
-This overwrites what's on the local machine with what's online.  
+This pulls what changes are online and merges it with your local directory  
 `git pull`
 
 To add a change to the next commit:  
