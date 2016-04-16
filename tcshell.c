@@ -14,12 +14,10 @@ int main() {
   char line[MAXCHARS], lastChar, * argv[MAXARGS];
   int pid, status, bg;
 
-  bg = parseline(line, argv);
-
   while(1) {
     printf("prompt> ");
     fgets(line, MAXCHARS, stdin); //get the line
-    parseline(line, argv);
+    bg = parseline(line, argv);
 
     if (!strcmp(argv[0], "quit")) exit(0);
 
@@ -33,9 +31,9 @@ int main() {
       //this line replaces the current process with the one specified
       //in argv[0].
       fprintf(stderr, "%s: Command not found.\n", argv[0]);
-      exit(0);
+      exit(-1);
     }
-    else { 
+    else {
     //parent process code
       if (bg) {
         printf("Both processes running concurrently.\n");
@@ -47,7 +45,7 @@ int main() {
     }
 
   }
-
+  wait(NULL); //reap the children
   return 0;
 }
 
