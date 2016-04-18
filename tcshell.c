@@ -56,6 +56,7 @@ int main() {
     }
 
   }
+  kill(0, SIGKILL);
   wait(NULL); //kill and reap the background children (so morbid lol)
   return 0;
 }
