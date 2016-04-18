@@ -1,3 +1,10 @@
+/*
+Max Paulus 69457762
+Professor Harris
+ICS53
+Lab2 - Shell Lab
+*/
+
 #include <stdio.h>
 #include <string.h>
 #include<stdlib.h>
@@ -17,9 +24,13 @@ int main() {
   while(1) {
     printf("prompt> ");
     fgets(line, MAXCHARS, stdin); //get the line
+    if (feof(stdin))
+      exit(0);
+
     bg = parseline(line, argv);
 
-    if (!strcmp(argv[0], "quit")) exit(0);
+    if (!strcmp(argv[0], "quit"))
+      exit(0);
 
     pid = fork(); //create a clone of the current process
     if(pid < 0) {
@@ -45,7 +56,7 @@ int main() {
     }
 
   }
-  wait(NULL); //reap the children
+  wait(NULL); //kill and reap the background children (so morbid lol)
   return 0;
 }
 
@@ -53,7 +64,7 @@ int main() {
 
   NOTE: This function is taken straight from the ICS53 textbook! 
   I, Max Paulus, do not claim to have written ANY of the following
-  code!! 
+  code!! Professor Harris said it was ok to use this.
   */
 int parseline(const char *cmdline, char **argv) 
 {
